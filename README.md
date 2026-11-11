@@ -1,5 +1,7 @@
 # 图解地理 · AI 地理图表精读工作流
 
+**在线使用：https://dingdjfjs-star.github.io/tujie-dili/ · 交互教程：https://dingdjfjs-star.github.io/tujie-dili/tutorial/ · 仓库：https://github.com/dingdjfjs-star/tujie-dili**（AI 密钥自带自存，演示模式开箱即用）
+
 **上传一张地理图表，AI 给你讲透整张图的所有地理考点。**
 
 面向中学地理「读图难」的痛点：学生把课本/地图册里的等高线地形图、气候直方图、洋流模式图、统计图表拍照或截图上传，AI 一次完成 —— **图形要素识别 → 空间规律提取 → 教材知识点关联 → 考点易错分析 → 3 道变式题自测**，答错的题自动进错题本，还能一键「举一反三」再生成同类题、生成可分享的精读卡长图。

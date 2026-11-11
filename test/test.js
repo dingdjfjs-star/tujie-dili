@@ -57,7 +57,9 @@ var html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 ok(html.indexOf('photos/hero.jpg') >= 0, 'index.html 引 hero 实景照');
 ok(html.indexOf('id="checkList"') >= 0 && html.indexOf('id="checkStamp"') >= 0, 'index.html 含读图自查卡');
 ok(html.indexOf('photos/pcontour.jpg') >= 0, '上传区实景贴');
-ok(html.replace(/xmlns=['"]http:\/\/www\.w3\.org\/2000\/svg['"]/g, '').indexOf('http://') < 0 && html.indexOf('https://') < 0, 'index.html 无外链（离线可用；data URI 内的 xmlns 命名空间除外）');
+var htmlNoXmlns = html.replace(/xmlns=['"]http:\/\/www\.w3\.org\/2000\/svg['"]/g, '');
+// 口径：页面不得依赖任何网络资源渲染（src/@import/<link>），纯导航 <a href> 允许
+ok(htmlNoXmlns.indexOf('src="http') < 0 && htmlNoXmlns.indexOf('@import') < 0 && !/<link[^>]+href="http/.test(htmlNoXmlns), 'index.html 无资源类外链（离线渲染；xmlns 命名空间与导航 <a> 除外）');
 ok(html.indexOf('viewport') >= 0, '移动端 viewport');
 
 var jsAll = ['prompt', 'md', 'store', 'engine', 'ai', 'ui', 'samples', 'photos', 'drill', 'share']

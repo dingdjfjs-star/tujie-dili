@@ -14,6 +14,7 @@ http.createServer((req, res) => {
   let p;
   try { p = decodeURIComponent((req.url || '/').split('?')[0]); } catch (e) { p = '/'; }
   if (p === '/' || p === '') p = '/index.html';
+  if (p.endsWith('/')) p += 'index.html';   // 目录索引：/tutorial/ → /tutorial/index.html
   const f = path.normalize(path.join(root, p));
   if (f !== root && f.indexOf(root + path.sep) !== 0) {
     res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
