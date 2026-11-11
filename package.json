@@ -1,0 +1,10 @@
+{
+  "name": "tujie-dili",
+  "version": "1.0.0",
+  "private": true,
+  "description": "图解地理 · AI 地理图表精读工作流（上传一张图，讲透整张图）",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/test.js"
+  }
+}
